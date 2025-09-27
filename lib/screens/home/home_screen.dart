@@ -9,35 +9,26 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('All Widgets'),
-      ),
+      appBar: AppBar(title: const Text('All Widgets')),
       body: _ListadoOpciones(),
     );
   }
 }
 
 class _ListadoOpciones extends StatelessWidget {
-  const _ListadoOpciones({
-    super.key,
-  });
+  const _ListadoOpciones();
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: _DetalleListadoOpciones(),
-    );
+    return const Center(child: _DetalleListadoOpciones());
   }
 }
 
 class _DetalleListadoOpciones extends StatelessWidget {
-  const _DetalleListadoOpciones({
-    super.key,
-  });
+  const _DetalleListadoOpciones();
 
   @override
   Widget build(BuildContext context) {
-
     return ListView.builder(
       itemCount: tipoWidgets.length,
       itemBuilder: (context, index) {
@@ -49,21 +40,17 @@ class _DetalleListadoOpciones extends StatelessWidget {
 }
 
 class _OptionTile extends StatelessWidget {
-  const _OptionTile({
-    super.key,
-    required this.item,
-  });
+  const _OptionTile({required this.item});
 
   final MenuItem item;
-  
+
   @override
   Widget build(BuildContext context) {
-
     final ColorScheme colors = Theme.of(context).colorScheme;
 
     return ListTile(
       leading: Icon(item.icon, color: colors.primary),
-      trailing: Icon( Icons.arrow_forward_ios_outlined),
+      trailing: Icon(Icons.arrow_forward_ios_outlined),
       title: Text(item.title),
       subtitle: Text(item.description),
       onTap: () {
